@@ -1,19 +1,42 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, OnModuleInit, Res, StreamableFile } from '@nestjs/common';
 import { BrandService } from './brand.service';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
 
+import { createReadStream } from 'fs';
+import { join } from 'path';
+import type { Response } from 'express';
+
 @Controller('brand')
-export class BrandController {
+export class BrandController implements OnModuleInit {
   constructor(private readonly brandService: BrandService) { }
 
-  @Post()
-  async create(@Body() createBrandDto: CreateBrandDto) {
-    return await this.brandService.create(createBrandDto);
+  async onModuleInit() {
+    // await this.brandService.insertBrandsToDatabaseOnModuleInit()
   }
 
-  @Get()
-  async getAllBrand() {
-    return await this.brandService.getAllBrand();
+  @Post('reset-brands-data')
+  async resetBrandsData() {
+    return await this.brandService.resetBrandsData();
   }
+
+  // @Get()
+  // getFile(@Res({ passthrough: true }) res: Response): StreamableFile {
+  //   const file = createReadStream(join(process.cwd(), 'brands.json'));
+  //   res.set({
+  //     'Content-Type': 'application/json',
+  //     'Content-Disposition': 'attachment; filename="brands.json"',
+  //   });
+  //   return new StreamableFile(file);
+  // }
+
+  // @Post()
+  // async create(@Body() createBrandDto: CreateBrandDto) {
+  //   return await this.brandService.create(createBrandDto);
+  // }
+
+  // @Get()
+  // async getAllBrand() {
+  //   return await this.brandService.getAllBrand();
+  // }
 }

@@ -11,10 +11,15 @@ import { join } from 'path';
 @Injectable()
 export class BrandService {
   private readonly logger = new Logger(BrandService.name);
+  private readonly brandNameRegex: RegExp = new RegExp(/(?:brandName|brandsName|brandNames|name|names|BN|B\.N)\b/i);
+  private readonly yearFoundedRegex: RegExp = new RegExp(/(?:yearCreated|yearFounded|yearsFounded|yearsCreated|years|year|YC|YF|Y\.C|Y\.F)\b/i);
+  private readonly headquartersRegex: RegExp = new RegExp(/(?:headquarters|head|HQ|hqAddress|B\.N)\b/i);
+  private readonly numberOfLocationsRegex: RegExp = new RegExp(/(?:numberOfLocations|Locations|Location|N\.O\.L)\b/i);
 
   constructor(
     @InjectModel(BRANDS) private readonly brandModel: Model<BrandDocument>,
-    @InjectConnection() private readonly connection: Connection) { }
+    @InjectConnection() private readonly connection: Connection,
+  ) { }
 
   // async insertBrandsToDatabaseOnModuleInit() {
   //   const reset = await this.resetBrandsData();
@@ -22,44 +27,105 @@ export class BrandService {
   // }
 
 
-  async resetBrandsData() {
-    try {
-      const filePath = join(process.cwd(), 'brands.json');
-      const jsonData = readFileSync(filePath, 'utf8');
-      const brandsData = JSON.parse(jsonData);
-      console.log(brandsData);
-      if (!brandsData) throw Error('can\'t get data from brandsData')
-
-      const deleteBrandsData = await this.brandModel.deleteMany({});
-      const saveBrandsData = await this.brandModel.insertMany(brandsData, { throwOnValidationError: false });
-      // const saveBrandsData = await this.brandModel.bulkSave(brandsData, { timestamps: true, bypassDocumentValidation: false, forceServerObjectId: true } /* { session } */);
-      console.log(saveBrandsData);
-
-      return { message: 'reset brands data successfully' }
-    } catch (error) {
-      this.logger.error('resetBrandsData : ' + error);
-      throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
-    }
-  }
-
-
-  // async dataTransformation() {
-  //   const session = await this.connection.startSession();
+  // async resetBrandsData() {
   //   try {
-  //     session.startTransaction();
+  //     const filePath = join(process.cwd(), 'brands.json');
+  //     const jsonData = readFileSync(filePath, 'utf8');
+  //     const brandsData = JSON.parse(jsonData);
+  //     console.log(brandsData);
+  //     if (!brandsData) throw Error('can\'t get data from brandsData')
 
-  //     const data = await this.brandModel.find({}, null, { session }).exec();
+  //     const deleteBrandsData = await this.brandModel.deleteMany({});
+  //     const saveBrandsData = await this.brandModel.insertMany(brandsData, { throwOnValidationError: false });
+  //     // const saveBrandsData = await this.brandModel.bulkSave(brandsData, { timestamps: true, bypassDocumentValidation: false, forceServerObjectId: true } /* { session } */);
+  //     console.log(saveBrandsData);
 
-  //     session.commitTransaction();
-  //     return data
+  //     return { message: 'reset brands data successfully' }
   //   } catch (error) {
-  //     if (session.inTransaction) await session.abortTransaction();
-  //     this.logger.error('fixDatabaseData : ' + error.message);
+  //     this.logger.error('resetBrandsData : ' + error);
   //     throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
-  //   } finally {
-  //     session.endSession()
   //   }
   // }
+
+
+
+  //   {
+  //     const session = await mongoose.startSession();
+  // session.startTransaction();
+
+  // try {
+  //   // Your transactional operations (e.g., find, update, insert)
+  //   // ...
+
+  //   await session.commitTransaction();
+  //   session.endSession();
+  //   console.log('Transaction committed successfully.');
+  // } catch (error) {
+  //   await session.abortTransaction();
+  //   session.endSession();
+  //   console.error('Transaction aborted:', error);
+  // }
+
+  //   }
+
+
+  async dataTransformation() {
+    // const session = await this.connection.startSession();
+    try {
+      // session.startTransaction();
+
+      const brands: Brand[] = await this.brandModel.find({}, null, /* { session } */).exec();
+      if (!brands.length) return { message: 'No data to transformation it' }
+
+      const brandTransformationData = brands.map(_brand => {
+        const brand = (_brand as any).toObject();
+        const fixedBrandData: Brand = {
+          brandName: null,
+          yearFounded: 1600,
+          headquarters: null,
+          numberOfLocations: 1
+        }
+
+        for (const brandKey of Object.keys(brand)) {
+          if (brand[brandKey] && typeof brand[brandKey] === 'object' && Object.keys(brand[brandKey]).length > 0 && brandKey !== '_id' /* !Types.ObjectId.isValid(brandKey) */) {
+            Object.keys(brand[brandKey]).forEach(nestedBrandKey => {
+              this.brandRegexTest(nestedBrandKey, brand[brandKey], fixedBrandData);
+            })
+          } else {
+            this.brandRegexTest(brandKey, brand, fixedBrandData);
+          }
+        }
+
+        return {
+          replaceOne: {
+            filter: { _id: brand._id },
+            replacement: fixedBrandData
+          }
+        }
+      })
+
+      // return brandTransformationData
+      const replaceOldBrandData = await this.brandModel.bulkWrite(brandTransformationData, /* { session } */);
+      if (replaceOldBrandData.matchedCount !== brands.length) throw new Error('can\'t update du to database error');
+
+      // await session.commitTransaction();
+      return { message: 'brands data transformation successfully' }
+    } catch (error) {
+      // if (session.inTransaction) await session.abortTransaction();
+      this.logger.error('fixDatabaseData : ' + error.message);
+      throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+    // finally {
+    //   session.endSession()
+    // }
+  }
+
+  private brandRegexTest(brandKey: any, oldBrand: any, fixedBrandData: Brand) {
+    if (this.brandNameRegex.test(brandKey)) fixedBrandData.brandName = oldBrand[brandKey];
+    else if (this.yearFoundedRegex.test(brandKey)) fixedBrandData.yearFounded = parseInt(oldBrand[brandKey]) || 1600;
+    else if (this.headquartersRegex.test(brandKey)) fixedBrandData.headquarters = oldBrand[brandKey];
+    else if (this.numberOfLocationsRegex.test(brandKey)) fixedBrandData.numberOfLocations = parseInt(oldBrand[brandKey]) || 1;
+  }
 
 
   // async create(createBrandDto: CreateBrandDto): Promise<Brand> {

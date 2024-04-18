@@ -15,9 +15,15 @@ export class BrandController implements OnModuleInit {
     // await this.brandService.insertBrandsToDatabaseOnModuleInit()
   }
 
-  @Post('reset-brands-data')
-  async resetBrandsData() {
-    return await this.brandService.resetBrandsData();
+  // @Post('reset-brands-data')
+  // async resetBrandsData() {
+  //   return await this.brandService.resetBrandsData();
+  // }
+
+
+  @Post('data-transformation')
+  async dataTransformation() {
+    return await this.brandService.dataTransformation();
   }
 
   // @Get()

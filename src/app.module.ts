@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
 import { BrandModule } from './brand/brand.module';
+import { AppConfigModule } from './config/app-config.module';
+import { databaseConnection } from './config/database-connection';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/restaurant'),
+    AppConfigModule,
+    databaseConnection,
     BrandModule
   ]
 })

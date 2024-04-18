@@ -3,11 +3,10 @@ import { HydratedDocument, Types } from "mongoose";
 import { BRANDS } from 'src/entities.name/entities.name';
 
 
-
 @Schema({ strict: true, timestamps: true, collection: BRANDS })
 export class Brand {
     @Prop({ type: Types.ObjectId })
-    _id?: Types.ObjectId
+    _id?: Types.ObjectId;
 
     @Prop({
         type: String,

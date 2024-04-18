@@ -1,1 +1,1 @@
-export class CreateBrandDto {}
+export class CreateBrandDto { }

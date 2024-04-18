@@ -1,26 +1,41 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
+import { Model } from 'mongoose';
+import { BRANDS } from 'src/entities.name/entities.name';
+import { InjectModel } from '@nestjs/mongoose';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
+import { Brand, BrandDocument } from './entities/brand.entity';
 
 @Injectable()
 export class BrandService {
-  create(createBrandDto: CreateBrandDto) {
-    return 'This action adds a new brand';
+  private readonly logger = new Logger(BrandService.name);
+
+  constructor(@InjectModel(BRANDS) private readonly brandModel: Model<BrandDocument>) { }
+
+  async create(createBrandDto: CreateBrandDto): Promise<Brand> {
+    try {
+      // const brand: Brand = {
+      //   brandName: 'brandName',
+      //   yearFounded: 20,
+      //   headquarters: 'headquarters',
+      //   numberOfLocations: 50
+      // }
+
+      const createdBrand = new this.brandModel(createBrandDto);
+      return await createdBrand.save();
+    } catch (error) {
+      this.logger.error('create : ' + error.message);
+      throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   }
 
-  findAll() {
-    return `This action returns all brand`;
-  }
 
-  findOne(id: number) {
-    return `This action returns a #${id} brand`;
-  }
-
-  update(id: number, updateBrandDto: UpdateBrandDto) {
-    return `This action updates a #${id} brand`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} brand`;
+  async getAllBrand(): Promise<Brand[]> {
+    try {
+      return await this.brandModel.find().exec();
+    } catch (error) {
+      this.logger.error('getAllBrand : ' + error.message);
+      throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   }
 }

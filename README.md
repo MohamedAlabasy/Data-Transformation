@@ -2,8 +2,7 @@
 
 ## Description:
 
-The task aims to transform a MongoDB collection provided by restaurant brands, which contained many inconsistencies and errors, into a unified format using the provided Mongoose schema.
-Additionally expanding the dataset with new seed data.
+The task aims to transform a mongoDB collection provided by restaurant brands, which contained many inconsistencies and errors, into a unified format using the provided Mongoose schema, additionally expanding the dataset with new seed data.
 
 ## To run this project
 

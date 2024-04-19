@@ -9,7 +9,6 @@ import { BRANDS } from 'src/entities-name/entities.name';
 import { Brand, BrandDocument } from './entities/brand.entity';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 
-
 @Injectable()
 export class BrandService {
   private readonly logger = new Logger(BrandService.name);
@@ -27,7 +26,6 @@ export class BrandService {
     // const session = await this.connection.startSession();
     try {
       // session.startTransaction();
-
       const brands: Brand[] = await this.brandModel.find({}, null, /* { session } */).exec();
       if (!brands.length) return { message: 'No data to transformation it' }
 

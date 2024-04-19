@@ -1,48 +1,61 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, OnModuleInit, Res, StreamableFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Res, StreamableFile } from '@nestjs/common';
+import { join } from 'path';
+import { createReadStream } from 'fs';
+import type { Response } from 'express';
 import { BrandService } from './brand.service';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
 
-import { createReadStream } from 'fs';
-import { join } from 'path';
-import type { Response } from 'express';
-
 @Controller('brand')
-export class BrandController implements OnModuleInit {
+export class BrandController {
   constructor(private readonly brandService: BrandService) { }
-
-  async onModuleInit() {
-    // await this.brandService.insertBrandsToDatabaseOnModuleInit()
-  }
-
-  // @Post('reset-brands-data')
-  // async resetBrandsData() {
-  //   return await this.brandService.resetBrandsData();
-  // }
-
 
   @Post('data-transformation')
   async dataTransformation() {
     return await this.brandService.dataTransformation();
   }
 
-  // @Get()
-  // getFile(@Res({ passthrough: true }) res: Response): StreamableFile {
-  //   const file = createReadStream(join(process.cwd(), 'brands.json'));
-  //   res.set({
-  //     'Content-Type': 'application/json',
-  //     'Content-Disposition': 'attachment; filename="brands.json"',
-  //   });
-  //   return new StreamableFile(file);
-  // }
+  @Get('new-brans-file')
+  getFile(@Res({ passthrough: true }) res: Response): StreamableFile {
+    const file = createReadStream(join(process.cwd(), 'new-brands.json'));
+    res.set({
+      'Content-Type': 'application/json',
+      'Content-Disposition': 'attachment; filename="brands.json"',
+    });
 
-  // @Post()
-  // async create(@Body() createBrandDto: CreateBrandDto) {
-  //   return await this.brandService.create(createBrandDto);
-  // }
+    return new StreamableFile(file);
+  }
 
-  // @Get()
-  // async getAllBrand() {
-  //   return await this.brandService.getAllBrand();
-  // }
+  @Post()
+  async create(@Body() createBrandDto: CreateBrandDto) {
+    return await this.brandService.create(createBrandDto);
+  }
+
+  @Get()
+  async getAllBrand() {
+    return await this.brandService.getAllBrand();
+  }
+
+  @Delete()
+  async deleteAllBrand() {
+    return await this.brandService.deleteAllBrand();
+  }
+
+
+  @Patch(':id')
+  async updateById(@Param('id') id: string, @Body() updateBrandDto: UpdateBrandDto) {
+    return await this.brandService.updateById(id, updateBrandDto);
+  }
+
+
+  @Get(':id')
+  async getById(@Param('id') id: string) {
+    return await this.brandService.getById(id);
+  }
+
+
+  @Delete(':id')
+  async deleteById(@Param('id') id: string) {
+    return await this.brandService.deleteById(id);
+  }
 }

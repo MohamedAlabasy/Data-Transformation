@@ -92,7 +92,12 @@ export class BrandService {
 
   async deleteAllBrand() {
     try {
-      return await this.brandModel.deleteMany({});
+      let message: string = 'brands deleted successfully';
+      const brands = await this.brandModel.deleteMany({});
+      if (!brands.acknowledged) throw new Error('can\'t delete du to database error')
+      else if (brands.deletedCount <= 0) message = 'No brands to deleted';
+
+      return { message }
     } catch (error) {
       this.logger.error('deleteAllBrand : ' + error.message);
       throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
@@ -102,7 +107,7 @@ export class BrandService {
 
   async updateById(_id: string, updateBrandDto: UpdateBrandDto): Promise<Brand> {
     try {
-      const brand = await this.brandModel.findByIdAndUpdate({ _id }, updateBrandDto);
+      const brand = await this.brandModel.findByIdAndUpdate({ _id }, updateBrandDto, { new: true });
       if (!brand) throw new HttpException('brand not found', HttpStatus.NOT_FOUND);
 
       return brand;
@@ -128,7 +133,10 @@ export class BrandService {
 
   async deleteById(_id: string) {
     try {
-      return await this.brandModel.deleteOne({ _id });
+      const brand = await this.brandModel.deleteOne({ _id });
+      if (brand.deletedCount !== 1) throw new HttpException('brand not found', HttpStatus.NOT_FOUND);
+
+      return { message: 'brand deleted successfully' }
     } catch (error) {
       this.logger.error('deleteById : ' + error.message);
       throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)

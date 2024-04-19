@@ -15,7 +15,7 @@ export class BrandService {
   private readonly numberOfLocationsRegex: RegExp = new RegExp(/(?:numberOfLocations|Locations|Location|N\.O\.L)\b/i);
 
   constructor(
-    @InjectModel(BRANDS) private readonly brandModel: Model<BrandDocument>,
+    @InjectModel(BRANDS) readonly brandModel: Model<BrandDocument>,
     @InjectConnection() private readonly connection: Connection) { }
 
 

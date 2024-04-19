@@ -1,0 +1,1106 @@
+{
+	"info": {
+		"_postman_id": "9c6768b2-a1b1-4b1a-a61c-2a116023577f",
+		"name": "Nest Data Transformation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19706659"
+	},
+	"item": [
+		{
+			"name": "Get All Brands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brand",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Brands",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5562"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15ba-+zaEJN2265IaOz3ilqx9cYEdOTw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:44:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6622b64cbb1578cff6bc59bd\",\n        \"brandName\": \"brandName\",\n        \"yearFounded\": 1600,\n        \"headquarters\": \"headquarters\",\n        \"numberOfLocations\": 10,\n        \"createdAt\": \"2024-04-19T18:22:04.073Z\",\n        \"updatedAt\": \"2024-04-19T18:22:04.073Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6622b772d12b6fec58d6be7d\",\n        \"brandName\": \"brandName\",\n        \"yearFounded\": 1600,\n        \"headquarters\": \"headquarters\",\n        \"numberOfLocations\": 10,\n        \"createdAt\": \"2024-04-19T18:26:58.257Z\",\n        \"updatedAt\": \"2024-04-19T18:26:58.257Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d8513656\",\n        \"brandName\": \"Luna.Renner\",\n        \"yearFounded\": 1643,\n        \"headquarters\": \"Noble.Keebler66\",\n        \"numberOfLocations\": 8939808764198912,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.442Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.442Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d8513657\",\n        \"brandName\": \"Perry.Dare86\",\n        \"yearFounded\": 1902,\n        \"headquarters\": \"Elinore26\",\n        \"numberOfLocations\": 3644025630359552,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.443Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.443Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d8513658\",\n        \"brandName\": \"Fredrick.Corkery\",\n        \"yearFounded\": 1910,\n        \"headquarters\": \"Vicenta.Marvin65\",\n        \"numberOfLocations\": 8356289803452416,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.443Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.443Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d8513659\",\n        \"brandName\": \"Rosella15\",\n        \"yearFounded\": 1842,\n        \"headquarters\": \"Carol_Fritsch7\",\n        \"numberOfLocations\": 960561588207616,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.443Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.443Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365a\",\n        \"brandName\": \"Domingo_Cronin\",\n        \"yearFounded\": 1659,\n        \"headquarters\": \"Ahmed.Jacobson42\",\n        \"numberOfLocations\": 746043647983616,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365b\",\n        \"brandName\": \"Uriah.Hermann-Langosh35\",\n        \"yearFounded\": 2008,\n        \"headquarters\": \"Filiberto.Schmeler93\",\n        \"numberOfLocations\": 7889684705312768,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365c\",\n        \"brandName\": \"Jamaal_Fadel\",\n        \"yearFounded\": 1709,\n        \"headquarters\": \"Adah.Koepp81\",\n        \"numberOfLocations\": 1328762796900352,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365d\",\n        \"brandName\": \"Finn_Sporer61\",\n        \"yearFounded\": 1670,\n        \"headquarters\": \"Wilburn_Okuneva10\",\n        \"numberOfLocations\": 4362531816603648,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365e\",\n        \"brandName\": \"Kiera56\",\n        \"yearFounded\": 1728,\n        \"headquarters\": \"Arvid18\",\n        \"numberOfLocations\": 6066949119279104,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622ba635f12e8b4d851365f\",\n        \"brandName\": \"Lenny.Casper\",\n        \"yearFounded\": 1973,\n        \"headquarters\": \"Alexandro_Cassin\",\n        \"numberOfLocations\": 2460534647554048,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:39:31.444Z\",\n        \"updatedAt\": \"2024-04-19T18:39:31.444Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3bd\",\n        \"brandName\": \"Denis79\",\n        \"yearFounded\": 1735,\n        \"headquarters\": \"Elmer74\",\n        \"numberOfLocations\": 2214533705760768,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.800Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.800Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3be\",\n        \"brandName\": \"Virginia.Wisoky\",\n        \"yearFounded\": 1606,\n        \"headquarters\": \"Adrain_McGlynn\",\n        \"numberOfLocations\": 5408071299891200,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.800Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.800Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3bf\",\n        \"brandName\": \"Martine37\",\n        \"yearFounded\": 1839,\n        \"headquarters\": \"Alvah.Hoeger\",\n        \"numberOfLocations\": 2010016940818432,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.800Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.800Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c0\",\n        \"brandName\": \"Annette59\",\n        \"yearFounded\": 1675,\n        \"headquarters\": \"Wilfrid.Robel\",\n        \"numberOfLocations\": 4673763635363840,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.801Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.801Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c1\",\n        \"brandName\": \"Tyrique68\",\n        \"yearFounded\": 1769,\n        \"headquarters\": \"Jules53\",\n        \"numberOfLocations\": 388700793995264,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.801Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.801Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c2\",\n        \"brandName\": \"Marlene_Schuppe97\",\n        \"yearFounded\": 1843,\n        \"headquarters\": \"Armani_Lowe51\",\n        \"numberOfLocations\": 3087810269544448,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.801Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.801Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c3\",\n        \"brandName\": \"Dean_Wolf39\",\n        \"yearFounded\": 1931,\n        \"headquarters\": \"Reanna.Zieme\",\n        \"numberOfLocations\": 5285124719509504,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.801Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.801Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c4\",\n        \"brandName\": \"Harry_Treutel\",\n        \"yearFounded\": 2015,\n        \"headquarters\": \"Kian_Stark5\",\n        \"numberOfLocations\": 4810439355531264,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.801Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.801Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c5\",\n        \"brandName\": \"Gustave_Jakubowski\",\n        \"yearFounded\": 1817,\n        \"headquarters\": \"Keshawn43\",\n        \"numberOfLocations\": 5969071319285760,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.802Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.802Z\"\n    },\n    {\n        \"_id\": \"6622bac87ce8ea4d3ebba3c6\",\n        \"brandName\": \"Asa_Yost\",\n        \"yearFounded\": 1650,\n        \"headquarters\": \"Tiara.Lowe-Dibbert90\",\n        \"numberOfLocations\": 7664317040164864,\n        \"__v\": 0,\n        \"createdAt\": \"2024-04-19T18:41:12.802Z\",\n        \"updatedAt\": \"2024-04-19T18:41:12.802Z\"\n    },\n    {\n        \"_id\": \"6622bb3b8fd1752228ff27ef\",\n        \"brandName\": \"brandName\",\n        \"yearFounded\": 1980,\n        \"headquarters\": \"headquarters\",\n        \"numberOfLocations\": 50,\n        \"createdAt\": \"2024-04-19T18:43:07.983Z\",\n        \"updatedAt\": \"2024-04-19T18:43:07.983Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6622bb6d8fd1752228ff27f1\",\n        \"brandName\": \"alabasy\",\n        \"yearFounded\": 2000,\n        \"headquarters\": \"egypt\",\n        \"numberOfLocations\": 10,\n        \"createdAt\": \"2024-04-19T18:43:57.597Z\",\n        \"updatedAt\": \"2024-04-19T18:43:57.597Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Brand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brandName\": \"alabasy\",\r\n    \"yearFounded\": 2000,\r\n    \"headquarters\": \"egypt\",\r\n    \"numberOfLocations\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/brand",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"brandName\": \"brandName\",\r\n    // \"yearFounded\": 1980,\r\n    // \"headquarters\": \"headquarters\",\r\n    // \"numberOfLocations\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "497"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f1-JJZc+zeI1mq2pb/Jh170NnbaTjQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:43:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": [\n        \"Brand name is required\",\n        \"brandName must be a string\",\n        \"Year founded is required\",\n        \"yearFounded must be a number conforming to the specified constraints\",\n        \"Year founded cannot be in the future\",\n        \"Year founded seems too old\",\n        \"Headquarters location is required\",\n        \"headquarters must be a string\",\n        \"numberOfLocations should not be empty\",\n        \"numberOfLocations must be a number conforming to the specified constraints\",\n        \"There should be at least one location\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "Create Brand",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"alabasy\",\r\n    \"yearFounded\": 2000,\r\n    \"headquarters\": \"egypt\",\r\n    \"numberOfLocations\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "207"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cf-qQ2OYTEXA636lEqL1k/oTUgaKRI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:43:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"brandName\": \"alabasy\",\n    \"yearFounded\": 2000,\n    \"headquarters\": \"egypt\",\n    \"numberOfLocations\": 10,\n    \"_id\": \"6622bb6d8fd1752228ff27f1\",\n    \"createdAt\": \"2024-04-19T18:43:57.597Z\",\n    \"updatedAt\": \"2024-04-19T18:43:57.597Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Brans Json File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brand/brans-json-file",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand",
+						"brans-json-file"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Brans Json File",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand/brans-json-file",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								"brans-json-file"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-o2o9fY7vsv84933PbkicH2PKyqA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 19:29:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"new-brands.json created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Data Transformation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brand/data-transformation",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand",
+						"data-transformation"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Data Transformation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand/data-transformation",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								"data-transformation"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-BfnrJzIrdI71r+MiKZxTfmcHPE4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 19:03:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"brands data transformation successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Brand By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brand/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6622bb6d8fd1752228ff27f1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622bb6d8fd1752228ff27f2"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-+Bhds3JZGiMiOmriAyy//epQlw0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:52:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 500,\n    \"message\": \"brand not found\"\n}"
+				},
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622bb6d8fd1752228ff27f2222a"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-503QPCrURtrjWfNLTRjm4kpzXVE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:52:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid ObjectId\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "Get Brand By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622bb6d8fd1752228ff27f1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "207"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cf-x9qUsZ8UJTXhA0GFUtvqj+lupqk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:52:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6622bb6d8fd1752228ff27f1\",\n    \"brandName\": \"alabasy\",\n    \"yearFounded\": 2000,\n    \"headquarters\": \"egypt\",\n    \"numberOfLocations\": 10,\n    \"createdAt\": \"2024-04-19T18:43:57.597Z\",\n    \"updatedAt\": \"2024-04-19T18:43:57.597Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "update brand by id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/brand/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6622bb6d8fd1752228ff27f1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update brand by id",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622bb6d8fd1752228ff27f1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-1uIIGDTrIypphxFt9Giu2XXwy20\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:53:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6622bb6d8fd1752228ff27f1\",\n    \"brandName\": \"mohamed alabasy\",\n    \"yearFounded\": 2000,\n    \"headquarters\": \"egypt\",\n    \"numberOfLocations\": 10,\n    \"createdAt\": \"2024-04-19T18:43:57.597Z\",\n    \"updatedAt\": \"2024-04-19T18:53:56.272Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "delete brand by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/brand/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6622bb6d8fd1752228ff27f1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622b64cbb1578cff6bc59bd"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-+Bhds3JZGiMiOmriAyy//epQlw0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:57:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 500,\n    \"message\": \"brand not found\"\n}"
+				},
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622b64cbb1578cff6bc59bdsasdasd"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-503QPCrURtrjWfNLTRjm4kpzXVE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:57:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid ObjectId\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+				},
+				{
+					"name": "delete brand by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"mohamed alabasy\"\r\n    // \"yearFounded\": 2000,\r\n    // \"headquarters\": \"egypt\",\r\n    // \"numberOfLocations\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/brand/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6622bb6d8fd1752228ff27f1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-twCtZEgSq6DhiF2yrGJ92HBqVTY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 18:57:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"brand deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete all brands",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brand",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brand"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no brands to delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-YsA2DaBgx8OVrm7zneg6yL0EWTk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 19:02:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No brands to deleted\"\n}"
+				},
+				{
+					"name": "delete all brands",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/brand",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-igkhcW5pPsNwwmBRw7wqpChceTs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Apr 2024 19:02:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"brands deleted successfully\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}

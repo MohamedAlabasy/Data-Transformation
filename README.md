@@ -33,7 +33,7 @@ npm run start:dev
 npx nestjs-command create:brand
 ```
 
-`Step 7` : Open [postman](https://www.postman.com/downloads/) and import : [API Collation](https://github.com/MohamedAlabasy/Data-Transformation/blob/main/api_collection.json) You will find it in the project file.
+`Step 7` : Open [postman](https://www.postman.com/downloads/) and import : [API Collation](https://github.com/MohamedAlabasy/Data-Transformation/blob/main/api-collection.json) You will find it in the project file.
 
 `Step 8` : To start brand data transformation hit `POST` API :
 

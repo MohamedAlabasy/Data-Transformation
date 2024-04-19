@@ -1,1 +1,1 @@
-export const BRANDS = 'Brand';
+export const BRANDS = 'brands';

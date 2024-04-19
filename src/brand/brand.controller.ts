@@ -1,7 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Res, StreamableFile } from '@nestjs/common';
-import { join } from 'path';
-import { createReadStream } from 'fs';
-import type { Response } from 'express';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { BrandService } from './brand.service';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
@@ -17,14 +14,8 @@ export class BrandController {
   }
 
   @Get('brans-json-file')
-  getFile(@Res({ passthrough: true }) res: Response): StreamableFile {
-    const file = createReadStream(join(process.cwd(), 'new-brands.json'));
-    res.set({
-      'Content-Type': 'application/json',
-      'Content-Disposition': 'attachment; filename="brands.json"',
-    });
-
-    return new StreamableFile(file);
+  async getBransJsonFile() {
+    return await this.brandService.getBransJsonFile();
   }
 
   @Post()

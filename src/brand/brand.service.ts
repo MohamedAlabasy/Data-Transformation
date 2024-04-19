@@ -1,10 +1,14 @@
 import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
+import { join } from 'path';
+import { promises } from 'fs';
+import { writeFile } from 'fs/promises';
 import { Connection, Model } from 'mongoose';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
 import { BRANDS } from 'src/entities-name/entities.name';
 import { Brand, BrandDocument } from './entities/brand.entity';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
+
 
 @Injectable()
 export class BrandService {
@@ -67,6 +71,25 @@ export class BrandService {
     // finally {
     //   session.endSession()
     // }
+  }
+
+
+  async getBransJsonFile() {
+    try {
+      const brands = await this.getAllBrand();
+      const fileName: string = 'new-brands.json';
+      const filePath = join(process.cwd(), fileName);
+      const fileExists = await promises.access(filePath).then(() => true).catch(() => false);
+      if (!fileExists) await writeFile(filePath, '[]');
+
+      // Write the data
+      await writeFile(filePath, JSON.stringify(brands));
+
+      return { message: `${fileName} created successfully` }
+    } catch (error) {
+      this.logger.error('getBransJsonFile : ' + error.message);
+      throw new HttpException(error.message, error.statues || HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   }
 
   async create(createBrandDto: CreateBrandDto): Promise<Brand> {
